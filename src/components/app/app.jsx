@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import SearchBar from '.././search-bar/search-bar.jsx'
+import SearchBar from '.././search-bar/search-bar.jsx';
+import Gif from '.././gif/gif.jsx';
 
 import './app.scss';
 
@@ -10,6 +11,7 @@ class App extends Component {
 			<>
 				<div className="left-container">
 					<SearchBar />
+					<div className='gif'><Gif /></div>
 				</div>
 				<div className="right-container">
 				</div>
