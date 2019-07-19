@@ -13,11 +13,20 @@ class SearchBar extends Component {
 		this.inputItem.current.focus();
 	}
 
+	handleChange = (e) => {
+		let url = `http://api.giphy.com/v1/gifs/search?q=${e.currentTarget.value}&apikey=qs27phkwUkdHszMG8TZdofXTSlL6eLO2`
+		fetch(url)
+		  .then(response => response.json())
+		  .then((data) => {
+		    console.log(data);
+		});
+	}
+
 	render(){
 		return(
 			<div className="search-bar">
 				<span className="glyphicon glyphicon-search" />
-				<input type="search" placeholder="Search..." ref={this.inputItem} />
+				<input type="text" placeholder="Search..." ref={this.inputItem} onChange={this.handleChange}/>
 			</div>
 		)
 	}
