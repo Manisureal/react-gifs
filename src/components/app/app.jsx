@@ -7,15 +7,28 @@ import GifList from '.././gif-list/gif-list.jsx';
 import './app.scss';
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			searchOutput: null
+		}
+	}
+
+	retrieveSearchOutput = (output) => {
+		this.setState({
+			searchOutput: output
+		})
+	}
+
 	render(){
 		return(
 			<>
 				<div className="left-container">
-					<SearchBar />
+					<SearchBar callBackFromSearch={this.retrieveSearchOutput}/>
 					<div className='gif'><Gif /></div>
 				</div>
 				<div className="right-container">
-					<GifList />
+					<GifList gifs={ this.state.searchOutput }/>
 				</div>
 			</>
 		)
