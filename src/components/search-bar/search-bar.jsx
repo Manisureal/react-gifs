@@ -19,10 +19,7 @@ class SearchBar extends Component {
 		fetch(url)
 		  .then(response => response.json())
 		  .then((data) => {
-		  	// debugger;
-		    // console.log(data);
-		    let gifList = "Hello";
-			return <GifList answer={data.data} />
+		  	this.props.callBackFromSearch(data.data)
 		});
 	}
 
