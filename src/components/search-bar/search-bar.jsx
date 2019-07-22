@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import GifList from '.././gif-list/gif-list.jsx';
 
 import './search-bar.scss';
 
@@ -18,7 +19,10 @@ class SearchBar extends Component {
 		fetch(url)
 		  .then(response => response.json())
 		  .then((data) => {
-		    console.log(data);
+		  	// debugger;
+		    // console.log(data);
+		    let gifList = "Hello";
+			return <GifList answer={data.data} />
 		});
 	}
 

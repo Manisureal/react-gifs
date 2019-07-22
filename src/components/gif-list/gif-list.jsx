@@ -6,7 +6,8 @@ import "./gif-list.scss"
 class GifList extends Component {
 	render(){
 		return(
-		)
+			{ answer }
+		);
 	}
 }
 
