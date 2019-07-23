@@ -19,7 +19,7 @@ class SearchBar extends Component {
 		fetch(url)
 		  .then(response => response.json())
 		  .then((data) => {
-		  	this.props.callBackFromSearch(data.data)
+		  	this.props.callBackFromSearch(data.data.slice(0,10))
 		});
 	}
 
