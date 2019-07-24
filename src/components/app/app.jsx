@@ -35,7 +35,7 @@ class App extends Component {
 					<div className='gif'><Gif displaySelected={this.state.selectedGif}/></div>
 				</div>
 				<div className="right-container">
-					<GifList gifs={ this.state.searchOutput } selectGif={ this.selectedGif }/>
+					<GifList gifs={ this.state.searchOutput } selectedGif={ this.selectedGif }/>
 				</div>
 			</>
 		)
