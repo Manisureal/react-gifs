@@ -10,7 +10,8 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			searchOutput: null
+			searchOutput: null,
+			selectedGifId: null
 		}
 	}
 
@@ -20,15 +21,21 @@ class App extends Component {
 		})
 	}
 
+	selectedGif = (gif) => {
+		this.setState({
+			selectedGif: gif
+		})
+	}
+
 	render(){
 		return(
 			<>
 				<div className="left-container">
 					<SearchBar callBackFromSearch={this.retrieveSearchOutput}/>
-					<div className='gif'><Gif /></div>
+					<div className='gif'><Gif displaySelected={this.state.selectedGif}/></div>
 				</div>
 				<div className="right-container">
-					<GifList gifs={ this.state.searchOutput }/>
+					<GifList gifs={ this.state.searchOutput } selectGif={ this.selectedGif }/>
 				</div>
 			</>
 		)
