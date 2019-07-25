@@ -10,15 +10,21 @@ class App extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			searchOutput: null,
-			selectedGifId: null
+			searchOutput: null
 		}
 	}
 
 	retrieveSearchOutput = (output) => {
-		this.setState({
+		if (output.length === 0) {
+			this.setState({
+				searchOutput: null,
+				selectedGif: null
+			})	
+		}
+
+		return this.setState({
 			searchOutput: output
-		})
+		})	
 	}
 
 	selectedGif = (gif) => {
