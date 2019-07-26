@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-import SearchBar from '.././search-bar/search-bar.jsx';
-import Gif from '.././gif/gif.jsx';
-import GifList from '.././gif-list/gif-list.jsx';
+import SearchBar from '../search-bar/search-bar';
+import Gif from '../gif/gif';
+import GifList from '../gif-list/gif-list';
 
 import './app.scss';
 
 class App extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			searchOutput: null
-		}
+  constructor(props) {
+    super(props);
+    this.state = {
+    	searchOutput: null
+    };
 	}
 
 	retrieveSearchOutput = (output) => {
